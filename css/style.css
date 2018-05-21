@@ -1,0 +1,38 @@
+body{
+	background-color: #1e272e;
+}
+
+.container{
+	height: 100vh;
+	background-color: #f6e58d;
+}
+
+.transparent{
+	background-color: transparent;
+}
+
+.borderCustom{
+	border: solid 2px #485460;
+	border-radius: 5px;
+}
+.borderBottom{
+	border-bottom: solid 2px #485460;
+}
+
+.input-group-text, .btn-outline-secondary{
+	background-color: transparent;
+	border: none;
+	border-right: solid 1px #485460;
+	border-radius: 0px;
+}
+
+.form-control{
+	border: none;
+}
+
+.displayNone{
+	display: none;
+}
+/* input[type="checkbox"] {
+    opacity: 0;
+} */
