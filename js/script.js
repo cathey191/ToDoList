@@ -3,7 +3,7 @@ $(document).ready(function(){
 		var inputSection = document.querySelector('#inputSection')
 
 
-		$(".btn").click(function(){
+		$(document).on('click', '.btn', function(){
 			if (this.innerHTML == '<i class="fas fa-check"></i>') {
 				this.innerHTML = '';
 			} else {
