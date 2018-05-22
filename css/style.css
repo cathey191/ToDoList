@@ -33,10 +33,7 @@ body{
 .displayNone{
 	display: none;
 }
-/* input[type="checkbox"] {
-    opacity: 0;
-} */
 
-.widt{
-	width: 38px;
+.checkWidth{
+	width: 41px;
 }
