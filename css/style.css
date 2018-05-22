@@ -20,8 +20,6 @@ body{
 .input-group-text, .btn-outline-secondary{
 	background-color: transparent;
 	border: none;
-	border-right: solid 1px #b33939;
-	border-radius: 0px;
 }
 
 .form-control{
@@ -30,6 +28,10 @@ body{
 	border-left: solid 1px #b33939;
 	border-radius: 0px;
 	text-align: left;
+}
+.tick{
+	border-right: solid 1px #b33939;
+	border-radius: 0px;
 }
 
 .displayNone{
