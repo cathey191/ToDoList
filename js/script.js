@@ -16,7 +16,15 @@ $(document).ready(function(){
     	var key = e.which || e.keyCode;
     	if (key === 13) {
 				var text = document.querySelector('input').value;
-				inputSection.insertAdjacentHTML('beforebegin', '<div class="input-group borderBottom" id="inputSection">'+'<div class="input-group-prepend">'+'<button class="btn btn-outline-secondary checkWidth" type="button">'+'</button>'+'</div>'+'<p class="form-control transparent" aria-label="Text input with checkbox" aria-describedby="basic-addon1">'+text+'</p>'+'</div>')
+				var newLine = '<div class="input-group borderBottom" id="inputSection">';
+				newLine += '		<div class="input-group-prepend">';
+				newLine += '			<button class="btn btn-outline-secondary checkWidth" type="button"></button>';
+				newLine += '		</div>';
+				newLine += '		<p class="form-control transparent">';
+				newLine += 				text;
+				newLine += '		</p></div>';
+				newLine += '	</div>'
+				inputSection.insertAdjacentHTML('beforebegin', newLine)
 				document.querySelector('input').value = '';
 			}
 		});
