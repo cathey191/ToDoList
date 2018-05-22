@@ -9,14 +9,6 @@ body{
 	text-align: center;
 }
 
-.transparent{
-	background-color: transparent;
-}
-
-.borderBottom{
-	border-bottom: solid 2px #0c2461;
-}
-
 .input-group-text, .btn-outline-secondary{
 	background-color: transparent;
 	border: none;
@@ -29,15 +21,29 @@ body{
 	border-radius: 0px;
 	text-align: left;
 }
+
 .tick{
 	border-right: solid 1px #b33939;
 	border-radius: 0px;
 }
 
-.displayNone{
-	display: none;
+.borderBottom{
+	border-bottom: solid 1px #40739e;
 }
 
 .checkWidth{
 	width: 41px;
 }
+
+.transparent{
+	background-color: transparent;
+}
+
+.remove{
+	border-radius: 0px;
+}
+
+/* tick color */
+/* .fa-check{
+	color: #b33939;
+} */

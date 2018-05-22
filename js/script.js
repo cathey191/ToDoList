@@ -1,16 +1,9 @@
 $(document).ready(function(){
 	(function() {
+		var cover = document.querySelector('.container');
+		
 
-
-		$(document).on('click', '.tick', function(){
-			if (this.innerHTML == '<i class="fas fa-check"></i>') {
-				this.innerHTML = '';
-			} else {
-				this.innerHTML = '<i class="fas fa-check"></i>';
-			}
-		});
-
-
+		// Creates list item
 		document.querySelector('input').addEventListener('keypress', function (e) {
     	var key = e.which || e.keyCode;
     	if (key === 13) {
@@ -23,7 +16,7 @@ $(document).ready(function(){
 				newLine += 				text;
 				newLine += '		</p>';
 				newLine += '		<div class="input-group-append">'
-				newLine += '			<button class="btn btn-outline-secondary checkWidth" type="button">'
+				newLine += '			<button class="btn btn-outline-secondary checkWidth remove" type="button">'
 				newLine += '				<i class="fas fa-times"></i>'
 				newLine += '			</button>'
 				newLine += '		</div>'
@@ -33,10 +26,26 @@ $(document).ready(function(){
 			}
 		});
 
-		$(document).on('click', '.fa-times', function(){
-			var perant = this.parentNode.parentNode.parentNode
-			perant.outerHTML = '';
-		});
+
+		// Buttons
+		function checkEventObj (e) {
+			// remove button
+			if (e.target.className == "btn btn-outline-secondary checkWidth remove") {
+				var perant = e.target.parentNode.parentNode
+				perant.outerHTML = '';
+
+			// tick button
+			} else if (e.target.className == 'btn btn-outline-secondary checkWidth tick') {
+				if (e.target.innerHTML == '<i class="fas fa-check"></i>') {
+					e.target.innerHTML = '';
+				} else {
+					e.target.innerHTML = '<i class="fas fa-check"></i>';
+				}
+			}
+
+		}
+
+		cover.addEventListener('click', checkEventObj, false);
 
 
 	}());
