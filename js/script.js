@@ -1,9 +1,11 @@
 (function() {
-	var cover = document.querySelector('.container');
+	var container = document.querySelector('.container');
+	var input = document.querySelector('input');
 
 
-	// Creates list item
-	document.querySelector('input').addEventListener('keypress', function (e) {
+	// creates list items
+	function createItem (e) {
+		console.dir(e);
 		var key = e.which || e.keyCode;
 		if (key === 13) {
 			var text = document.querySelector('input').value;
@@ -23,17 +25,18 @@
 			inputSection.insertAdjacentHTML('beforebegin', newLine)
 			document.querySelector('input').value = '';
 		}
-	});
+	}
+	input.addEventListener('keypress', createItem, false);
 
 
 	// Buttons
 	function checkEventObj (e) {
-		// remove button
+		// removes items
 		if (e.target.className == "btn btn-outline-secondary checkWidth remove") {
 			var perant = e.target.parentNode.parentNode
 			perant.outerHTML = '';
 
-		// tick button
+		// ticks button
 		} else if (e.target.className == 'btn btn-outline-secondary checkWidth tick') {
 			if (e.target.innerHTML == '<i class="fas fa-check"></i>') {
 				e.target.innerHTML = '';
@@ -41,10 +44,8 @@
 				e.target.innerHTML = '<i class="fas fa-check"></i>';
 			}
 		}
-
 	}
-
-	cover.addEventListener('click', checkEventObj, false);
+	container.addEventListener('click', checkEventObj, false);
 
 
 }());
