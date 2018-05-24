@@ -26,7 +26,7 @@ h1{
 	text-align: left;
 }
 
-.tick{
+.tick, .play{
 	border-right: solid 1px #b33939;
 	border-radius: 0px;
 }

@@ -5,7 +5,6 @@
 
 	// creates list items
 	function createItem (e) {
-		console.dir(e);
 		var key = e.which || e.keyCode;
 		if (key === 13) {
 			var text = document.querySelector('input').value;
@@ -32,8 +31,8 @@
 	// Buttons
 	function checkEventObj (e) {
 		// removes items
-		if (e.target.className == "btn btn-outline-secondary checkWidth remove") {
-			var perant = e.target.parentNode.parentNode
+		if (e.target.className == "fas fa-times") {
+			var perant = e.target.parentNode.parentNode.parentNode
 			perant.outerHTML = '';
 
 		// ticks button
@@ -43,6 +42,10 @@
 			} else {
 				e.target.innerHTML = '<i class="fas fa-check"></i>';
 			}
+
+		// play button
+		} else if (e.target.className == 'fas fa-play') {
+			console.log('pass');
 		}
 	}
 	container.addEventListener('click', checkEventObj, false);

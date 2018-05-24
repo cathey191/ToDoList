@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Text To Speech</title>
+	
+</head>
+<body>
+	<script src="p5.min.js"></script>
+	<script src="p5.speech.js"></script>
+
+	<script>
+		(function(){
+
+			var voiceObj = new p5.Speech(); // speech synthesis object
+			voiceObj.onLoad = speechLoaded; 
+
+			// This function wil fire once voices are 
+			// fully loaded. You can apply text to the 
+			// speak method to make an application speak
+			// to the user
+			function speechLoaded () {
+				voiceObj.setVoice('Fred');
+				voiceObj.speak('hi there'); // say something	
+				console.log(voiceObj.voices);	
+			}
+
+
+		})();
+	</script>	
+</body>
+</html>
