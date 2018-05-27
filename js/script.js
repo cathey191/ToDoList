@@ -1,6 +1,7 @@
 (function() {
 	var container = document.querySelector('.container');
 	var input = document.querySelector('input');
+	var voiceObj = new p5.Speech();
 
 
 	// creates list items
@@ -49,20 +50,22 @@
 		}
 	}
 	container.addEventListener('click', checkEventObj, false);
-	
+
 
 	// Speech
-	var voiceObj = new p5.Speech();
-
 	function speechLoaded () {
 		var words = document.getElementsByClassName('speech');
+		var listArray = [];
+
+		// Type of voice
 		voiceObj.setVoice('Fred');
 
+		// Add list items to an array
 		for (var i = 0; i < words.length; i++) {
-			voiceObj.speak(words[i].innerText) // say something
-			console.log(words[i].innerText);
+			listArray.push(words[i].innerText)
 		}
-
+		// Reading out array
+		voiceObj.speak(listArray)
 	}
 
 
