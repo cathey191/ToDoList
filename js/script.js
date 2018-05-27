@@ -12,7 +12,7 @@
 			newLine += '		<div class="input-group-prepend">';
 			newLine += '			<button class="btn btn-outline-secondary checkWidth tick" type="button"></button>';
 			newLine += '		</div>';
-			newLine += '		<p class="form-control transparent">';
+			newLine += '		<p class="form-control transparent speech">';
 			newLine += 				text;
 			newLine += '		</p>';
 			newLine += '		<div class="input-group-append">'
@@ -45,10 +45,25 @@
 
 		// play button
 		} else if (e.target.className == 'fas fa-play') {
-			console.log('pass');
+			speechLoaded ()
 		}
 	}
 	container.addEventListener('click', checkEventObj, false);
+	
+
+	// Speech
+	var voiceObj = new p5.Speech();
+
+	function speechLoaded () {
+		var words = document.getElementsByClassName('speech');
+		voiceObj.setVoice('Fred');
+
+		for (var i = 0; i < words.length; i++) {
+			voiceObj.speak(words[i].innerText) // say something
+			console.log(words[i].innerText);
+		}
+
+	}
 
 
 }());
